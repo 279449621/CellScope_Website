@@ -17,7 +17,9 @@ For any inquiries or suggestions, please contact thni@zju.edu.cn.
    :maxdepth: 2
    :caption: Contents:
 
+   Installation
    Tutorials  
    API
+   Contributions and Feature Requests
    References
 

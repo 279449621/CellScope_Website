@@ -2,7 +2,7 @@ CellScope.ts.visualize_tree_structured
 ======================================
 
 CellScope.ts. ``visualize_tree_structured`` (**Y_initial**, **label_step0**, **Y_1**, **Title_1**, **Y_all**, **Title_all**,  
-**index_1**, **index_all**, **step0**, **step1**, **T**, **save_fig**=False, **save_path**='')
+**index_1**, **index_all**, **step0**, **step1**, **T**, **save_fig** = False, **save_path** = '')
 
 The ``visualize_tree_structured`` function creates a series of UMAP-based scatter plots representing hierarchical 
 clustering across different levels. 
