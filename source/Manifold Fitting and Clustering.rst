@@ -3,7 +3,9 @@ Manifold Fitting and Clustering
 
 This dataset contains 622 cells from the **GSE59739** dataset, derived from the **mouse lumbar dorsal root ganglion**. 
 For more details, refer to the `description <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59739>`_. 
-It is available for free download in **txt.gz** format from the **GEO** database via this link: `Download Link <https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE59739&format=file&file=GSE59739%5FDataTable%2Etxt%2Egz>`_.
+It is available for free download in **txt.gz** format from the **GEO** database via this link:
+`Download Link <https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE59739&format=file&file=GSE59739%5FDataTable%2Etxt%2Egz>`_. 
+You can also directly obtain the data from the Test Data folder in CellScope's `GitHub repository <https://github.com/zhigang-yao/CellScope.git>`_.
 
 
 Data Reading
@@ -15,6 +17,7 @@ Load the **gene expression matrix** and **cell type labels** using `loadmat`.
 .. code-block:: python
 
     from scipy.io import loadmat
+    import CellScope
     data_name = 'GSE59739.mat'
     Data = loadmat(data_name)
     fea_raw = Data['fea_raw']
@@ -103,5 +106,3 @@ resulting in a clearer clustering structure, while the **second manifold fitting
 .. image:: _static/Visualization.png
    :alt: UMAP Comparison
    :align: center
-
-

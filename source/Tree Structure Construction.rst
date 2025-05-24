@@ -13,6 +13,7 @@ Hierarchical Clustering of the Data
     import requests
     import anndata
     import CellScope
+    import numpy as np
     from scipy.sparse import issparse
     url = "https://datasets.cellxgene.cziscience.com/5488ff72-58ed-4f0d-913c-1b6d4d8412b1.h5ad"
     file_path = "Siletti-1.h5ad"
@@ -47,9 +48,23 @@ The current version of CellScope's code for drawing tree structures can generate
 
 .. image:: _static/Tree_Structued_Graph_1.png
 
-You can manually adjust and assemble it into your preferred style, for example:
+The current version of CellScope can automatically generate hierarchical tree diagrams with up to three levels.
 
-.. image:: _static/Tree_Structued_Graph_2.png
+.. code-block:: python
+
+    CellScope.ts.tree_structure_visualization_static(T_all_1,step0,step1,Title_1,Title_all,Y_initial,Y_1,Y_all,index_1,index_all, save_figure=True, filename="Res/tree_visualization_static.pdf")
+
+.. image:: _static/tree_visualization_static.png
+
+To better observe cell differentiation processes and pathways, CellScope provides dynamic visualization of hierarchical tree structures.
+
+.. code-block:: python
+
+    CellScope.ts.tree_structure_visualization_dynamic(T_all_1,step0,step1,Title_1,Title_all,Y_initial,Y_1,Y_all,index_1,index_all,save_gif=True, 
+                                       gif_filename="tree_animation.gif", dpi=100)
+
+.. image:: _static/tree_animation.gif
+   :align: center
 
 Marker Gene Between Each clusters
 --------------------------------------------------
@@ -77,7 +92,7 @@ Marker Gene Between Each clusters
                                                 cluster1, cluster2, class_name=[Title_all[2*ii], Title_all[2*ii+1]], 
                                                 figsize=(10, 3), save_fig=False, save_path=None)
 
-Using the violin plots of the marker genes in Cluster 0 versus other cells, as well as between Cluster 51 and Cluster 52 as examples.
+Using the violin plots of the marker genes in Cluster 1 versus other cells, as well as between Cluster 3-2-1 and Cluster 3-2-2 as examples.
 
 .. image:: _static/Tree_Structure_Marker_Gene_1.png
 .. image:: _static/Tree_Structure_Marker_Gene_2.png
