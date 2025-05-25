@@ -13,6 +13,7 @@ Hierarchical Clustering of the Data
     import anndata
     import CellScope
     from scipy.sparse import issparse
+    import numpy as np
     url = "https://datasets.cellxgene.cziscience.com/5488ff72-58ed-4f0d-913c-1b6d4d8412b1.h5ad"
     file_path = "Siletti-1.h5ad"
     response = requests.get(url, stream=True)
@@ -23,6 +24,7 @@ Hierarchical Clustering of the Data
     adata = anndata.read_h5ad("Siletti-1.h5ad")
     fea_raw = adata.X
     cell_types = adata.obs['cell_type']
+    Gene_Name = adata.var['feature_name']
     label = np.array(cell_types)
     fea_raw,fea_log,fea = CellScope.cs.Normalization(fea_raw)
     fea_Fitting_1, Signal_Space, Center_index = CellScope.cs.Manifold_Fitting_1(fea)
@@ -35,17 +37,17 @@ Hierarchical Clustering of the Data
     Y_2 = CellScope.cs.Visualization(fea_Fitting_2)
 
 
-Identify the marker genes for Cluster 51 and Cluster 52
+Identify the marker genes for Cluster 3-1 and Cluster 3-2
 ---------------------------------------------------------
 
 .. code-block:: python
 
     Y_initial, label_step0, Y_1, Title_1, Y_all, Title_all, index_1, index_all, step0, step1 = CellScope.ts.generate_tree_structured(fea_Fitting_1, T_all_1, step0 = None, step1 = 8)
-    cluster1 = index_all[0]
-    cluster2 = index_all[1]
+    cluster1 = index_all[2]
+    cluster2 = index_all[3]
     label = T_all_1[:,8]
     marker_gene_indices,_ = CellScope.fm.FindMarker(fea_log, cluster1, cluster2, selected_number = 5, selected_method = 'diff pct')
-
+    marker_gene_name = np.array(Gene_Name[marker_gene_indices])
 
 CellScope offers various visualization methods for marker genes
 
@@ -85,7 +87,7 @@ Plot violin plots to compare the expression levels of marker genes between diffe
 .. code-block:: python
 
     CellScope.gev.compare_violin_plot_between_classes(fea_log, marker_gene_indices, marker_gene_name, 
-                                        cluster1, cluster2, class_name=['Cluster 51', 'Cluster 52'], 
+                                        cluster1, cluster2, class_name=['Cluster 3-1', 'Cluster 3-2'], 
                                         figsize=(10, 3), save_fig=False, save_path=None)
 
 .. image:: _static/compare_violin_plot_between_classes.png

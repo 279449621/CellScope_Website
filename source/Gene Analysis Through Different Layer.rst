@@ -32,16 +32,18 @@ Retrieve the hierarchical structure of the data
     fea_Fitting_2, fitting_index, index_after_outlier_removal = CellScope.cs.Manifold_Fitting_2(fea_Fitting_1)
     T_all_1 = CellScope.cs.GraphCluster(fea_Fitting_1)
     T_all_2 = CellScope.cs.GraphCluster(fea_Fitting_2)
-    Y_1, Title_1, Y_all, Title_all, index_1, index_all, step0, step1 = CellScope.ts.generate_tree_structured(fea_Fitting_1, T_all_1, step0 = None, step1 = 8)
-    CellScope.ts.visualize_tree_structured(Y_initial, label_step0, Y_1, Title_1, Y_all, Title_all, index_1, index_all, step0, step1, T_all_1, save_fig = True, save_path='Res')
+    Y_initial, label_step0, Y_1, Title_1, Y_all, Title_all, index_1, index_all, step0, step1 = CellScope.ts.generate_tree_structured(fea_Fitting_1, T_all_1, step0 = None, step1 = 8)
+    CellScope.ts.tree_structure_visualization_static(T_all_1,step0,step1,Title_1,Title_all,Y_initial,Y_1,Y_all,index_1,index_all)
+
+.. image:: _static/tree_visualization_static.png
 
 Define the hierarchical structure to be considered
 ----------------------------------------------------------------------------------------------------
 
-The considered hierarchical structure is: from **Cluster 5** to **Cluster 51** and **Cluster 52**, then to **Cluster 521** and **Cluster 522**.
+The considered hierarchical structure is: from **Cluster 3** to **Cluster 3-1** and **Cluster 3-2**, then to **Cluster 3-2-1** and **Cluster 3-2-2**.
 
 .. code-block:: python
-    layer = [index_1[5],np.setdiff1d(range(T_all_1.shape[0]),index_1[5]),index_all[0],index_all[1],index_all[4],index_all[5]]
+    layer = [index_1[3],np.setdiff1d(range(T_all_1.shape[0]),index_1[3]),index_all[2],index_all[3],index_all[6],index_all[7]]
 
 Calculate the Wasserstein distance between nodes at the same layer
 ----------------------------------------------------------------------------------------------------
@@ -65,9 +67,9 @@ Count the number of each gene type at each layer.
 =====================  =======  =======  =======
 Gene Type              Layer 1  Layer 2  Layer 3
 =====================  =======  =======  =======
-Housekeeper Gene       56844    58480    58879
-Type-Related Gene      1579     436      307
-Type-Determining Gene  813      320      50
+Housekeeper Gene       56844    58480    58990
+Type-Related Gene      1578     435     214
+Type-Determining Gene  814      321      32
 =====================  =======  =======  =======
 
 Sankey diagram of gene type changes between layers

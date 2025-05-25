@@ -46,7 +46,7 @@ Tree Structure Visualization
 
 The current version of CellScope's code for drawing tree structures can generate a visualization for each node. The naming convention is as follows: Initial represents the visualization of all cells; Cluster 0 to Cluster 5 represent the visualization of the first-layer nodes; Cluster 51 and Cluster 52 correspond to the first and second subclusters of Cluster 5, respectively, for the second-layer nodes, and so forth.
 
-.. image:: _static/Tree_Structued_Graph_1.png
+.. image:: _static/Tree_Structure_Each.png
 
 The current version of CellScope can automatically generate hierarchical tree diagrams with up to three levels.
 

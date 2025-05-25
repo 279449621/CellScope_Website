@@ -20,3 +20,5 @@ Generation and visualization of tree-structured representations of cell clusteri
    CellScope.ts.find_map
    CellScope.ts.generate_tree_structured
    CellScope.ts.visualize_tree_structured
+   CellScope.ts.tree_structure_visualization_static
+   CellScope.ts.tree_structure_visualization_dynamic
