@@ -1,4 +1,3 @@
 Sphinx
 sphinx-rtd-theme
-nbsphinx
-sphinx_copybutton
+sphinxcontrib.bibtex
