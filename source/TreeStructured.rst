@@ -14,6 +14,15 @@ Generation and visualization of tree-structured representations of cell clusteri
    * - ``CellScope.ts.visualize_tree_structured``
      - Visualize the tree-structured UMAP embeddings for different levels of clustering.
 
+   * - ``CellScope.ts.tree_structure_visualization_static``
+     - Generate the static tree-structured visualization.
+
+   * - ``CellScope.ts.tree_structure_visualization_dynamic``
+     - Generate the dynamic tree-structured visualization.
+
+   * - ``CellScope.ts.tree_structure_visualization_step``
+     -  Generate the each step of tree-structured visualization.
+
 .. toctree::
    :maxdepth: 2
 
@@ -22,3 +31,4 @@ Generation and visualization of tree-structured representations of cell clusteri
    CellScope.ts.visualize_tree_structured
    CellScope.ts.tree_structure_visualization_static
    CellScope.ts.tree_structure_visualization_dynamic
+   CellScope.ts.tree_structure_visualization_step

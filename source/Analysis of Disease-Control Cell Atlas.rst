@@ -14,6 +14,7 @@ Run CellScope on the Dataset
     import anndata
     import CellScope
     from scipy.sparse import issparse
+    import numpy as np
     url = "https://datasets.cellxgene.cziscience.com/fbe23743-b3b5-4e2c-9bb2-95ee14d36783.h5ad"
     file_path = "COVID-19.h5ad"
     response = requests.get(url, stream=True)

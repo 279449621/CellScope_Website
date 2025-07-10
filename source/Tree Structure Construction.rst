@@ -48,6 +48,10 @@ The current version of CellScope's code for drawing tree structures can generate
 
 .. image:: _static/Tree_Structure_Each.png
 
+Through this set of image outputs, CellScope provides users with a template for self-assembly using Adobe Illustrator software, as shown in the figure below.
+
+.. image:: _static/5class.png
+
 The current version of CellScope can automatically generate hierarchical tree diagrams with up to three levels.
 
 .. code-block:: python
@@ -65,6 +69,15 @@ To better observe cell differentiation processes and pathways, CellScope provide
 
 .. image:: _static/tree_animation.gif
    :align: center
+
+If you are more interested in the differentiation at a specific step or deeper differentiation pathways, we recommend using tree_structure_visualization_step to progressively generate the branches of the tree-structured visualization.
+
+.. code-block:: python
+
+    _,_ = CellScope.ts.tree_structure_visualization_step(T_all_1,step0,step1,Title_1,Title_all,Y_initial,Y_1,Y_all,index_1,index_all,main_radius=2.0,orbit_radius=1.5,
+    orbit_distance=4.0,branch_params=None,save_fig = False,save_path = '')
+
+.. image:: _static/tree_visualization_step.png
 
 Marker Gene Between Each clusters
 --------------------------------------------------
