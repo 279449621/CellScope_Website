@@ -15,14 +15,17 @@ release = '0.1'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'nbsphinx',
-    'sphinx_copybutton'
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
+    "sphinx_rtd_theme",
+    "nbsphinx",
+    "sphinx_copybutton",
 ]
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-
+bibtex_bibfiles = ["references.bib"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
