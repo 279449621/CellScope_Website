@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CellScope.cs.findCenters &mdash; CellScope 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CellScope.cs.Manifold_Fitting_1" href="CellScope.cs.Manifold_Fitting_1.html" />
+    <link rel="prev" title="CellScope.cs.Normalization" href="CellScope.cs.Normalization.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            CellScope
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="API.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="CellScope.html">CellScope: <code class="docutils literal notranslate"><span class="pre">cs</span></code></a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="CellScope.cs.Normalization.html">CellScope.cs.Normalization</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CellScope.cs.findCenters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CellScope.cs.Manifold_Fitting_1.html">CellScope.cs.Manifold_Fitting_1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CellScope.cs.Manifold_Fitting_2.html">CellScope.cs.Manifold_Fitting_2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CellScope.cs.GraphCluster.html">CellScope.cs.GraphCluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CellScope.cs.Visualization.html">CellScope.cs.Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ClusteringMetrics.html">ClusteringMetrics: <code class="docutils literal notranslate"><span class="pre">cm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="FindMarker.html">FindMarker: <code class="docutils literal notranslate"><span class="pre">fm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeneAnalysis.html">GeneAnalysis: <code class="docutils literal notranslate"><span class="pre">ga</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeneExpreesionVisualizer.html">GeneExpressionVisualizer: <code class="docutils literal notranslate"><span class="pre">gev</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="TreeStructured.html">TreeStructured: <code class="docutils literal notranslate"><span class="pre">ts</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Contributions%20and%20Feature%20Requests.html">Contributions and Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="References.html">References</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CellScope</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="API.html">API</a></li>
+          <li class="breadcrumb-item"><a href="CellScope.html">CellScope: <code class="docutils literal notranslate"><span class="pre">cs</span></code></a></li>
+      <li class="breadcrumb-item active">CellScope.cs.findCenters</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/CellScope.cs.findCenters.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cellscope-cs-findcenters">
+<h1>CellScope.cs.findCenters<a class="headerlink" href="#cellscope-cs-findcenters" title="Link to this heading"></a></h1>
+<p>CellScope.cs. <code class="docutils literal notranslate"><span class="pre">findCenters</span></code> (<strong>rho</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">np.ndarray</span></code>, <strong>delta</strong> : <code class="xref py py-class docutils literal notranslate"><span class="pre">np.ndarray</span></code>)</p>
+<p><cite>findCenters</cite> adaptively identifies multiple cluster centers based on the product of local density (<cite>rho</cite>)
+and the distance to the nearest higher-density cell (<cite>delta</cite>).</p>
+<p class="rubric">Parameters</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>rho</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>):</dt><dd><p>A vector of length <cite>n_cell</cite>, representing the local density for each cell.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>delta</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>):</dt><dd><p>A vector of Euclidean distances between each cell and the nearest higher-density cell.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p class="rubric">Return</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>centers</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>):</dt><dd><p>A vector containing the indices of the selected cluster centers, with the length equal to the number of centers.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>deltarho</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">csr_matrix</span></code>):</dt><dd><p>A vector of length <cite>n_cell</cite>, representing the product of the normalized <cite>rho</cite> (local density) and <cite>delta</cite> (distance to higher-density cells).</p>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CellScope.cs.Normalization.html" class="btn btn-neutral float-left" title="CellScope.cs.Normalization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="CellScope.cs.Manifold_Fitting_1.html" class="btn btn-neutral float-right" title="CellScope.cs.Manifold_Fitting_1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yao Group.</p>
+  </div>
+
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
