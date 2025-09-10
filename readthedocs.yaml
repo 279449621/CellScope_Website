@@ -1,15 +1,13 @@
-# .readthedocs.yaml
-
 version: 2
 
 build:
-  os: ubuntu-20.04
+  os: ubuntu-22.04  # 推荐使用更新的 OS
   tools:
-    python: "3.8"
+    python: "3.10"   # 使用较新的 Python 版本
 
 python:
   install:
-    - requirements: docs/requirements.txt
+    - requirements: docs/requirements.txt  # 确保路径正确
 
 sphinx:
-  configuration: docs/source/conf.py
+  configuration: docs/source/conf.py  # 确认路径存在
