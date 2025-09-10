@@ -1,0 +1,26 @@
+CellScope.fm.differential_expression
+==========================
+
+`CellScope.fm.differential_expression(cluster1: np.ndarray, cluster2: np.ndarray, selected_number: int, selected_method: str)`
+
+.. rubric:: Parameters
+
+- **cluster1** (:class:`np.ndarray`): 
+  An index vector containing cell indices belonging to the first cluster.
+
+- **cluster2** (:class:`np.ndarray`): 
+  An index vector containing cell indices belonging to the second cluster.
+
+- **selected_number** (:class:`int`): 
+  The number of top marker genes to be selected.
+
+- **selected_method** (:class:`str`): 
+  The method used for selecting marker genes. Options include `'diff pct'`, `'diff mean'`, `'FC'`, `'Wilcoxon'`, and `'t-test'`.
+
+.. rubric:: Return
+
+- **indices** (:class:`ndarray`): 
+  An array of indices corresponding to the selected marker genes.
+
+- **values** (:class:`ndarray`): 
+  An array of values for the selected marker genes, based on the specified method.

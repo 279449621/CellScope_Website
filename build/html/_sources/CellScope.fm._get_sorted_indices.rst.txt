@@ -1,0 +1,20 @@
+CellScope.fm._get_sorted_indices
+==========================
+
+`CellScope.fm._get_sorted_indices(Res: np.ndarray, selected_number: int)`
+
+.. rubric:: Parameters
+
+- **Res** (:class:`np.ndarray`): 
+  A results array from the differential expression analysis.
+
+- **selected_number** (:class:`int`): 
+  The number of top marker genes to be selected.
+
+.. rubric:: Return
+
+- **indices** (:class:`ndarray`): 
+  Indices of the top selected marker genes.
+
+- **values** (:class:`ndarray`): 
+  The corresponding values for the selected marker genes.
