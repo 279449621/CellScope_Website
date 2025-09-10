@@ -7,7 +7,7 @@ build:
 
 python:
   install:
-    - requirements: docs/requirements.txt  # 确保路径正确
+    - requirements: requirements.txt  # 确保路径正确
 
 sphinx:
-  configuration: docs/source/conf.py  # 确认路径存在
+  configuration: source/conf.py  # 确认路径存在
